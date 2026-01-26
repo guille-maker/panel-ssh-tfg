@@ -32,6 +32,21 @@ He desarrollado un **Panel de Administración SSH con PHP**, una herramienta pro
 - XAMPP (entorno local)
 
 ---
+## Capturas del proyecto
+
+| Nº | Sección | Captura | Descripción |
+|---|---|---|---|
+| 1 | Login | ![Login](assets/img/1.jfif) | Pantalla de inicio con autenticación segura y control de sesión. |
+| 2 | Panel general de comandos | ![Panel general](assets/img/2.jfif) | Ejecución remota de comandos SSH con salida en tiempo real. |
+| 3 | Gestión de usuarios | ![Usuarios](assets/img/3.jfif) | Crear, borrar, bloquear y gestionar usuarios del servidor remoto. |
+| 4 | Gestión de archivos | ![Archivos](assets/img/4.jfif) | Navegación SFTP: subir, descargar, eliminar y editar archivos. |
+| 5 | Procesos (parte 1) | ![Procesos 1](assets/img/5.jfif) | Visualización de procesos activos y recursos del sistema. |
+| 6 | Procesos (parte 2) | ![Procesos 2](assets/img/6.jfif) | Opciones para matar procesos y ver uso de CPU/memoria. |
+| 7 | Logs de comandos | ![Logs](assets/img/7.jfif) | Registro de comandos ejecutados y actividad del panel. |
+| 8 | Seguridad y accesos (parte 1) | ![Seguridad 1](assets/img/8.jfif) | Monitorización de accesos fallidos y estado del servidor. |
+| 9 | Seguridad y accesos (parte 2) | ![Seguridad 2](assets/img/9.jfif) | Gestión de firewall y configuración SSH para endurecimiento. |
+| 10 | Alerta SSH por mail | ![Alerta por correo](assets/img/10.jfif) | Notificaciones por email ante eventos críticos (fail2ban, fallos, etc.). |
+
 
 ## ⚙️ Instalación (local)
 
@@ -39,17 +54,17 @@ He desarrollado un **Panel de Administración SSH con PHP**, una herramienta pro
 
 git clone https://github.com/tuusuario/tu-repo.git
 
-Entrar al proyecto:
+2. Entrar al proyecto:
 
 cd tu-repo
 
-Instalar dependencias:
+3. Instalar dependencias:
 
 composer install
 
-Configurar base de datos y tablas necesarias.
+4. Configurar base de datos y tablas necesarias.
 
-Configurar credenciales en los archivos:
+5. Configurar credenciales en los archivos:
 
 conexion.php
 
