@@ -1,0 +1,14 @@
+{
+    "2fa": "off",
+    "notifications_email": "emberrayo@gmail.com",
+    "ip_restriction": "none",
+    "ssh_settings": {
+        "port": "22",
+        "allow_root": "false",
+        "password_auth": "true"
+    },
+    "logging": {
+        "enabled": "true",
+        "log_path": "\/var\/log\/auth.log"
+    }
+}

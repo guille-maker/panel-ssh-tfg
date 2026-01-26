@@ -1,0 +1,14 @@
+FROM alpine:latest
+
+RUN apk update && \
+    apk add openssh shadow bash sudo && \
+    useradd -m alpine && \
+    echo "alpine:alpine123" | chpasswd && \
+    mkdir /var/run/sshd && \
+    ssh-keygen -A && \
+    echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config && \
+    echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config
+
+EXPOSE 22
+
+CMD ["/usr/sbin/sshd", "-D"]

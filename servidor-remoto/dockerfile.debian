@@ -1,0 +1,14 @@
+FROM debian:stable-slim
+
+RUN apt-get update && \
+    apt-get install -y openssh-server sudo && \
+    useradd -ms /bin/bash debian && \
+    echo "debian:debian123" | chpasswd && \
+    mkdir /var/run/sshd && \
+    echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config && \
+    echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config
+
+EXPOSE 22
+
+CMD ["/usr/sbin/sshd", "-D"]
+

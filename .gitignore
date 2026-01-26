@@ -1,0 +1,34 @@
+# Credenciales y configuración sensible
+conexion.php
+ssh_config.php
+servidores.php
+hash.php
+insertar_usuario.php
+config.php
+.env
+.env.local
+
+# Dependencias PHP
+/vendor/
+
+# Logs
+*.log
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Configuración local de XAMPP
+.htaccess
+
+# Caché / temporales
+/tmp/
+
+# IDEs
+.idea/
+.vscode/
+
+# Backups y temporales
+*.bak
+*.tmp
+*.swp

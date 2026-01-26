@@ -1,0 +1,28 @@
+FROM ubuntu:22.04
+
+# Evita interacciones en la instalación
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Instala OpenSSH, Apache, PHP y sudo
+RUN apt update && \
+    apt install -y openssh-server apache2 php libapache2-mod-php sudo && \
+    mkdir /var/run/sshd
+
+# Crea un usuario con contraseña "admin"
+RUN useradd -m -s /bin/bash admin && \
+    echo "admin:admin" | chpasswd && \
+    usermod -aG sudo admin
+
+# Da permisos sudo sin contraseña para pruebas
+RUN echo "admin ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+# Cambia puerto SSH (opcional) y permite acceso
+RUN sed -i 's/#Port 22/Port 2222/' /etc/ssh/sshd_config && \
+    sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
+    echo "PermitEmptyPasswords no" >> /etc/ssh/sshd_config
+
+# Exponemos puertos SSH (2222) y Apache (80)
+EXPOSE 2222 80
+
+# Comando al iniciar el contenedor
+CMD service ssh start && apachectl -D FOREGROUND

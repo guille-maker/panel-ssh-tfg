@@ -1,0 +1,50 @@
+{
+    "theme": "light",
+    "timezone": "Europe\/Madrid",
+    "2fa": "disabled",
+    "session_timeout": "30",
+    "language": "en",
+    "notifications_email": "emberrayo@gmail.com",
+    "date_format": "d\/m\/Y",
+    "ssh_settings": {
+        "default_port": "22",
+        "timeout": "10",
+        "keepalive": "1",
+        "compression": "0",
+        "banner": ""
+    },
+    "logging": {
+        "enabled": "1",
+        "level": "medium",
+        "retention": "30",
+        "path": "logs\/"
+    },
+    "smtp_settings": {
+        "host": "sandbox.smtp.mailtrap.io",
+        "username": "0cbbefcdbf0097",
+        "password": "70b7c24c534d76",
+        "port": "2525",
+        "from_email": "notificaciones@tu-dominio.com",
+        "from_name": "Panel SSH"
+    },
+    "notifications": {
+        "notify_login": true,
+        "notify_ssh": true,
+        "notify_errors": true,
+        "notify_updates": false,
+        "login": true,
+        "ssh": true,
+        "errors": true,
+        "updates": true
+    },
+    "ip_restriction": "none",
+    "allowed_ips": "",
+    "notify_login": "1",
+    "notify_ssh": "1",
+    "notify_errors": "1",
+    "alerts": {
+        "2fa": true,
+        "logging": true,
+        "ip_restriction": true
+    }
+}

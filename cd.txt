@@ -1,0 +1,37 @@
+    if (isset($_POST['comando'])) {
+        $comando = trim($_POST['comando']);
+
+        // Si es un comando "cd"
+        if (preg_match('/^cd\s+(.*)/', $comando, $match)) {
+            $nuevoDir = trim($match[1]);
+            $cwd = $_SESSION['cwd'];
+
+            if ($nuevoDir === '..') {
+                $_SESSION['cwd'] = dirname($cwd);
+            } else {
+                $nuevoAbsoluto = ($nuevoDir[0] === '/') ? $nuevoDir : $cwd . '/' . $nuevoDir;
+
+                // Comprobar si el directorio existe en el servidor remoto
+                if ($sftp->is_dir($nuevoAbsoluto)) {
+                    $_SESSION['cwd'] = $nuevoAbsoluto;
+                } else {
+                    echo "❌ El directorio no existe: $nuevoDir";
+                    exit;
+                }
+            }
+
+            echo "📁 Directorio cambiado a: " . $_SESSION['cwd'];
+            exit;
+        }
+
+        // Ejecutar el comando en el directorio actual
+        $cwd = $_SESSION['cwd'];
+        $cmd = "cd " . escapeshellarg($cwd) . " && " . $comando;
+        $output = $ssh->exec($cmd);
+
+        $stmt = $pdo->prepare("INSERT INTO logs (usuario, comando) VALUES (?, ?)");
+        $stmt->execute([$_SESSION['usuario'], $cmd]);
+
+        echo htmlspecialchars($output ?: "(Sin salida)");
+        exit();
+    }

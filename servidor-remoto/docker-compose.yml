@@ -1,0 +1,32 @@
+version: '3.9'
+
+services:
+  ubuntu:
+    build:
+      context: .
+      dockerfile: dockerfile.ubuntu
+    container_name: ubuntu_server
+    ports:
+      - "8021:80"
+      - "2222:22"
+    tty: true
+
+  debian:
+    build:
+      context: .
+      dockerfile: dockerfile.debian
+    container_name: debian_server
+    ports:
+      - "8022:80"
+      - "23:22"
+    tty: true
+
+  alpine:
+    build:
+      context: .
+      dockerfile: dockerfile.alpine
+    container_name: alpine_server
+    ports:
+      - "8023:80"
+      - "24:22"
+    tty: true
