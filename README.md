@@ -94,49 +94,52 @@ Notificaciones por email ante eventos críticos (fail2ban, fallos, etc.).
 
 ## ⚙️ Instalación (local)
 
-1. Clonar el repositorio:
+### 1️⃣ Clonar el repositorio
 
-git clone https://github.com/tuusuario/tu-repo.git
+    git clone https://github.com/tuusuario/tu-repo.git
 
-2. Entrar al proyecto:
+### 2️⃣ Entrar al proyecto
 
-cd tu-repo
+    cd tu-repo
 
-3. Instalar dependencias:
+### 3️⃣ Instalar dependencias
 
-composer install
+    composer install
 
-4. Configurar base de datos y tablas necesarias.
+### 4️⃣ Configuración inicial
 
-5. Configurar credenciales en los archivos:
+- Configurar la base de datos y crear las tablas necesarias.
+- Revisar y ajustar las credenciales en:
 
-conexion.php
+  - conexion.php  
+  - ssh_config.php  
+  - servidores.php  
 
-ssh_config.php
+---
 
-servidores.php
+## 🔒 Seguridad
 
-🔒 Seguridad
-⚠️ No subir credenciales al repositorio.
+⚠️ No subir nunca credenciales reales al repositorio.
 
+---
 
-📌 Uso
-Accede a index.php
+## 📌 Uso
 
-Inicia sesión con un usuario registrado
+1. Acceder a index.php desde el navegador  
+2. Iniciar sesión  
+3. Administrar servidores desde el panel  
 
-Administra tus servidores desde el panel
+---
 
-🧠 Lo que aprendí
-Este proyecto me permitió profundizar en:
+## 🧠 Lo que aprendí
 
-Administración de sistemas Linux
+- Administración de sistemas Linux  
+- Seguridad en entornos remotos  
+- Desarrollo web backend y frontend  
+- Automatización con Docker  
 
-Seguridad en entornos remotos
+---
 
-Desarrollo backend y frontend web moderno
+## 👨‍💻 Autor
 
-Automatización y despliegue con Docker
-
-📌 Autor
 guille-maker
